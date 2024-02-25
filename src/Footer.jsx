@@ -1,16 +1,24 @@
 import React from 'react';
-import './Footer.css'; // Import the CSS file
+import './Footer.css'; // Assuming you have a CSS file for styles
+import { FaPhone } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
+import { FaWhatsapp } from "react-icons/fa";
 
-function PersonInfo() {
-  const name = "Aditya Praveen"; // Replace with the actual name
-  const college = "RV University Bengaluru"; // Replace with the actual college name
+const MyCard = () => {
+    return (
+        <div className="myCard">
+            <div className="innerCard">
+                <div className="frontSide">
+                    <p className="title">Aditya Praveen</p>
+                    <p>RV University</p>
+                </div>
+                <div className="backSide">
+                    <p className="title"><FaPhone /> 7349240444</p>
+                    <p>Tap the WhatsApp icon to share feedback. <a href='https://wa.me/917349240444'><FaWhatsapp /> </a></p>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-  return (
-    <div className="person-info">
-      <h2>{name}</h2>
-      <p>{college}</p>
-    </div>
-  );
-}
-
-export default PersonInfo;
+export default MyCard;

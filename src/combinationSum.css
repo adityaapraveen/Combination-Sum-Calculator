@@ -11,9 +11,13 @@ h2 {
     text-align: center;
     color: #fff;
 }
+/* .heading{
+    /* text-decoration:underline; */
+    /* color: #ccc; 
+*/
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 label {
@@ -25,32 +29,98 @@ label {
 
 input[type="number"],
 input[type="text"] {
-    width: 100%;
+    width: 95%;
+    max-height: 40px;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 20px;
     box-sizing: border-box;
 }
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
+.cta {
+    display: flex;
+    padding: 11px 33px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    color: white;
+    background: #9900ff;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
+    margin-left: 70px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.cta:focus {
+    outline: none;
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #000000;
+}
+
+.cta .second {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover .second {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+.span {
+    transform: skewX(15deg)
+}
+
+.second {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+}
+
+.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover .three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+
+    50% {
+        fill: #000000;
+    }
+
+    100% {
+        fill: white;
+    }
 }
 
 .result {
     margin-top: 20px;
-
 }
 
 .result h3 {
@@ -75,11 +145,151 @@ div.result {
     padding-bottom: 20px;
 }
 
-div.hidden-result{
+div.hidden-result {
     margin-left: 3px;
 }
 
-
-body{
+body {
     padding: 30px;
 }
+
+.item-hints {
+    --purple: #720c8f;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.item-hints .hint {
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-hints .hint-dot {
+    z-index: 3;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: translate(-0%, -0%) scale(0.95);
+    transform: translate(-0%, -0%) scale(0.95);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.item-hints .hint-radius {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.item-hints .hint[data-position="1"] .hint-content {
+    top: 85px;
+    left: 50%;
+    margin-left: 56px;
+}
+
+.item-hints .hint-content {
+    width: 300px;
+    position: absolute;
+    z-index: 5;
+    padding: 20px 0;
+    opacity: 0;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    color: #fff;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.item-hints .hint:hover .hint-content {
+    position: absolute;
+    z-index: 5;
+    padding: 20px 0;
+    opacity: 1;
+    -webkit-transition: opacity 0.7s ease, visibility 0.7s ease;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    color: #ffffff;
+    visibility: visible;
+    pointer-events: none;
+}
+
+.item-hints .hint-content::before {
+    width: 0px;
+    bottom: 29px;
+    left: 0;
+    content: "";
+    background-color: #ffffff;
+    height: 1px;
+    position: absolute;
+    transition: width 0.4s;
+}
+
+.item-hints .hint:hover .hint-content::before {
+    width: 180px;
+    transition: width 0.7s;
+}
+
+.item-hints .hint-content::after {
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    bottom: 29px;
+    left: 0;
+    width: 80px;
+    content: "";
+    background-color: #ffffff;
+    height: 1px;
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.item-hints .hint:hover .hint-content::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.item-hints .hint[data-position="4"] .hint-content {
+    bottom: 65px;
+    left: 50%;
+    margin-left: 56px;
+}
+
+.input-with-tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.item-hints {
+    margin-left: 4px;
+}
+
+div.input-with-tooltip {
+    display: flex;
+}
+
+svg {
+    height: 3em;
+    width: 3em;
+}
+.font{
+    font-size: 21px;
+}
+
