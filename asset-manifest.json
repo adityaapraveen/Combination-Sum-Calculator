@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Combination-Sum-Calculator/static/css/main.0a1a303c.css",
-    "main.js": "/Combination-Sum-Calculator/static/js/main.2b035edf.js",
+    "main.css": "/Combination-Sum-Calculator/static/css/main.ccf02fab.css",
+    "main.js": "/Combination-Sum-Calculator/static/js/main.0a368772.js",
     "index.html": "/Combination-Sum-Calculator/index.html",
-    "main.0a1a303c.css.map": "/Combination-Sum-Calculator/static/css/main.0a1a303c.css.map",
-    "main.2b035edf.js.map": "/Combination-Sum-Calculator/static/js/main.2b035edf.js.map"
+    "main.ccf02fab.css.map": "/Combination-Sum-Calculator/static/css/main.ccf02fab.css.map",
+    "main.0a368772.js.map": "/Combination-Sum-Calculator/static/js/main.0a368772.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a1a303c.css",
-    "static/js/main.2b035edf.js"
+    "static/css/main.ccf02fab.css",
+    "static/js/main.0a368772.js"
   ]
 }
